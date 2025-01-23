@@ -2,9 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Color scheme variables */
 :root {
   --background: #ffffff;
-  /* --foreground: #171717; */
+  --foreground: #171717; /* Default foreground color */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -14,28 +15,7 @@
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --background: #ffffff;
-  /* --foreground: #171717; */
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Global body styles */
 body {
   color: var(--foreground);
   background: var(--background);
@@ -43,19 +23,20 @@ body {
 }
 
 /* Animation Definitions */
+
+/* Fade-in animation */
 @keyframes fadeIn {
   0% {
     opacity: 0;
     transform: scale(0.8);
-
   }
   100% {
     opacity: 1;
     transform: scale(1);
-
   }
 }
 
+/* Rotate animation */
 @keyframes rotate {
   0% {
     transform: rotate(0deg);
@@ -68,9 +49,7 @@ body {
   }
 }
 
-
-
-
+/* Slide-up animation */
 @keyframes slideUp {
   0% {
     transform: translateY(50px);
@@ -82,6 +61,7 @@ body {
   }
 }
 
+/* Floating animation */
 @keyframes float {
   0% {
     transform: translateY(0);
@@ -94,6 +74,7 @@ body {
   }
 }
 
+/* Glowing effect */
 @keyframes glow {
   0%, 100% {
     opacity: 0.5;
@@ -103,6 +84,7 @@ body {
   }
 }
 
+/* Slow bounce animation */
 @keyframes bounceSlow {
   0%, 100% {
     transform: translateY(0);
@@ -112,21 +94,58 @@ body {
   }
 }
 
-/* Tailwind Utilities Integration */
+
+/* Apply fade-in animation */
 .fade-in {
   animation: fadeIn 1.5s cubic-bezier(0.42, 0, 0.58, 1) both;
-
 }
 
+/* Apply slide-up animation */
 .slide-up {
   animation: slideUp 1.5s cubic-bezier(0.42, 0, 0.58, 1) both;
 }
 
+/* Apply glowing animation */
 .glow {
   animation: glow 3s ease-in-out infinite;
 }
 
+/* Apply slow bounce animation */
 .bounce-slow {
   animation: bounceSlow 2.5s ease-in-out infinite;
+}
 
+
+/* Image Container Styles */
+.image-container {
+  position: relative;
+  overflow: hidden; /* Ensures the frame is clipped nicely */
+  border-radius: 12px; /* Rounded corners for cute frames */
+  border: 4px solid #f6a1c1; /* Soft pastel pink border */
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+/* Hover Effect: Slight Scale and Glow */
+.image-container:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2); /* Increase shadow for focus effect */
+}
+
+/* Optional Cute Border Animation */
+.image-container::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  border: 2px dashed #f7b2d4; /* Soft dashed pink border */
+  border-radius: 8px; /* Rounded dashed border */
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.image-container:hover::before {
+  opacity: 1; /* Show the dashed border when hovered */
 }
