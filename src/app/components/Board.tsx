@@ -1,40 +1,33 @@
-"use client"
-import { useEffect, useState } from "react";
-import Image from "next/image";
+import React from "react";
 
 const Board = () => {
+  // Array of image paths for the vision board
   const images = [
-    '/images/Abundance.jpeg',
-    '/images/graduate.jpeg',
-    '/images/job.jpeg',
-    '/images/contract.jpeg',
-    '/images/couple.jpeg',
-    '/images/coast.jpeg',
-    '/images/Love Selfie.jpeg',
-    '/images/plane.jpeg',
-    '/images/dubai.jpeg',
-    '/images/passports.jpeg',
-    '/images/affirmation.jpeg',
-    '/images/money.jpeg',
-    '/images/heels.jpeg',
-    '/images/skin care.jpeg',
-    '/images/shopping.jpeg',
-    '/images/code space.jpeg',
-    '/images/iphone 12 pro.jpeg',
-    '/images/opportunities.jpeg',
-    '/images/own business.jpeg',
-    '/images/success.jpeg',
+    "/images/Abundance.jpeg",
+    "/images/graduate.jpeg",
+    "/images/job.jpeg",
+    "/images/contract.jpeg",
+    "/images/couple.jpeg",
+    "/images/coast.jpeg",
+    "/images/Love Selfie.jpeg",
+    "/images/plane.jpeg",
+    "/images/dubai.jpeg",
+    "/images/passports.jpeg",
+    "/images/affirmation.jpeg",
+    "/images/money.jpeg",
+    "/images/heels.jpeg",
+    "/images/skin care.jpeg",
+    "/images/shopping.jpeg",
+    "/images/code space.jpeg",
+    "/images/iphone 12 pro.jpeg",
+    "/images/opportunities.jpeg",
+    "/images/own business.jpeg",
+    "/images/success.jpeg",
+    "/images/Car.jpeg",
+    "/images/house.jpg",
+    "/images/new home.jpeg",
+    "/images/family.jpeg"
   ];
-
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
-  if (!isMounted) {
-    return <div style={{ visibility: "hidden" }} />;
-  }
 
   return (
     <div
@@ -73,17 +66,22 @@ const Board = () => {
         </div>
       </div>
 
-      {/* Vision Board Grid for 19 Images */}
-      <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-8">
+      {/* Vision Board Section */}
+      <div className="py-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {images.map((src, index) => (
-          <div key={index} className="image-container">
-            <Image
+          <div
+            key={index}
+            className="relative group hover:scale-105 transition-transform duration-300 rounded-2xl overflow-hidden shadow-lg"
+          >
+            <img
               src={src}
-              alt={`Image ${index + 1}`}
-              width={200}
-              height={100}
-              className="object-cover w-full h-full rounded-lg"
+              alt={`Vision ${index + 1}`}
+              className="w-full h-72 object-cover"
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300"></div>
+            <p className="absolute bottom-4 left-4 text-white font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              Vision {index + 1}
+            </p>
           </div>
         ))}
       </div>
