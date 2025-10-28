@@ -76,7 +76,7 @@ const Board = () => {
             <img
               src={src}
               alt={`Vision ${index + 1}`}
-              className="w-full h-72 object-cover"
+              className="w-full h-full "
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300"></div>
             <p className="absolute bottom-4 left-4 text-white font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">

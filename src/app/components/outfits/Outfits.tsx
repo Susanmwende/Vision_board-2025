@@ -3,30 +3,38 @@ import React from "react";
 const Outfits = () => {
   // Array of image paths for the vision board
   const images = [
-    "/images/Abundance.jpeg",
-    "/images/graduate.jpeg",
-    "/images/job.jpeg",
-    "/images/contract.jpeg",
-    "/images/couple.jpeg",
-    "/images/coast.jpeg",
-    "/images/Love Selfie.jpeg",
-    "/images/plane.jpeg",
-    "/images/dubai.jpeg",
-    "/images/passports.jpeg",
-    "/images/affirmation.jpeg",
-    "/images/money.jpeg",
-    "/images/heels.jpeg",
-    "/images/skin care.jpeg",
-    "/images/shopping.jpeg",
-    "/images/code space.jpeg",
-    "/images/iphone 12 pro.jpeg",
-    "/images/opportunities.jpeg",
-    "/images/own business.jpeg",
-    "/images/success.jpeg",
-    "/images/Car.jpeg",
-    "/images/house.jpg",
-    "/images/new home.jpeg",
-    "/images/family.jpeg",
+    "/images/outfit2.jpeg",
+    "/images/outfit3.jpeg",
+    "/images/outfit4.jpeg",
+    "/images/outfit5.jpeg",
+    "/images/outfit7.jpeg",
+    "/images/outfit1.jpeg",
+    "/images/outfit8.jpeg",
+    "/images/outfit10.jpeg",
+    "/images/outfit11.jpeg",
+    "/images/outfit12.jpeg",
+    "/images/outfit13.jpeg",
+    "/images/outfit15.jpeg",
+    "/images/outfit21.jpeg",
+    "/images/outfit6.jpeg",
+    "/images/outfit18.jpeg",
+    "/images/outfit23.jpeg",
+    "/images/outfit24.jpeg",
+    "/images/outfit27.jpeg",
+    "/images/outfit16.jpeg",
+    "/images/outfit17.jpeg",
+    "/images/outfit14.jpeg",
+    "/images/outfit19.jpeg",
+    "/images/outfit20.jpeg",
+    "/images/outfit9.jpeg",
+    "/images/outfit22.jpeg",
+    "/images/outfit26.jpeg",
+    "/images/outfit25.jpeg",
+    "/images/outfit28.jpeg",
+
+
+
+
   ];
 
   return (
@@ -42,7 +50,7 @@ const Outfits = () => {
             <img
               src={src}
               alt={`Vision ${index + 1}`}
-              className="outfit-image w-full h-48 object-cover rounded-lg shadow-md"
+              className=" w-full h-96 rounded-lg shadow-md"
             />
             <div className="outfit-overlay absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition-opacity rounded-lg"></div>
             <p className="outfit-caption absolute bottom-2 left-2 text-white text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity">
