@@ -1,28 +1,32 @@
 'use client';
 
 import { useState } from 'react';
-import Board from '@/app/components/board/Board';
-import Outfits from '@/app/components/outfits/Outfits';
+import Board from './components/board/Board';
+import Outfits from './components/outfits/Outfits';
 
 export default function Page() {
   const [currentPage, setCurrentPage] = useState<'board' | 'outfits'>('board');
 
+  const handleNavigation = (page: 'board' | 'outfits') => {
+    setCurrentPage(page);
+  };
+
   return (
     <main className="relative min-h-screen bg-gray-100">
-      {/* Main Content */}
+      {/* Content Section */}
       <div className="pb-20">
         {currentPage === 'board' && <Board />}
         {currentPage === 'outfits' && <Outfits />}
       </div>
 
-      {/* Bottom Navigation */}
-      <nav className="fixed bottom-0 left-0 w-full bg-transparent text-white shadow-lg">
-        <div className="flex justify-around py-4">
+      {/* Bottom Navigation Bar */}
+      <nav className="fixed bottom-0 left-0 w-full bg-white text-gray-800 shadow-lg border-t border-gray-200">
+        <div className="flex justify-around py-3">
           <button
-            onClick={() => setCurrentPage('board')}
+            onClick={() => handleNavigation('board')}
             className={`flex flex-col items-center px-4 ${
-              currentPage === 'board' ? 'text-blue-400' : 'text-gray-400'
-            } hover:text-blue-500 transition-all`}
+              currentPage === 'board' ? 'text-blue-500' : 'text-gray-500'
+            } hover:text-blue-600 transition-all`}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -42,10 +46,10 @@ export default function Page() {
           </button>
 
           <button
-            onClick={() => setCurrentPage('outfits')}
+            onClick={() => handleNavigation('outfits')}
             className={`flex flex-col items-center px-4 ${
-              currentPage === 'outfits' ? 'text-blue-400' : 'text-gray-400'
-            } hover:text-blue-500 transition-all`}
+              currentPage === 'outfits' ? 'text-blue-500' : 'text-gray-500'
+            } hover:text-blue-600 transition-all`}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
